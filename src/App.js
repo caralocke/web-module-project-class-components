@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList'
 
-const toDos = [
+const todos = [
   {
     name: 'Vacuum',
     id: 1,
@@ -21,15 +22,19 @@ class App extends React.Component {
   constructor() {
     super()
     this.state ={
-      toDos: toDos
+      todos: todos
     }
   }
   
   render() {
+    console.log(this.state.todos)
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
+      <div className='App'>
+        <div>
+          <h2>Welcome to your Todo App!</h2>
+          <TodoForm />
+        </div>
+        <TodoList todos={this.state.todos}/>
       </div>
     );
   }
