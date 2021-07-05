@@ -25,6 +25,17 @@ class App extends React.Component {
       todos: todos
     }
   }
+
+  addTodo = name => {
+    const newTodo ={
+      name: name,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
   
   render() {
     console.log(this.state.todos)
@@ -32,7 +43,7 @@ class App extends React.Component {
       <div className='App'>
         <div>
           <h2>Welcome to your Todo App!</h2>
-          <TodoForm />
+          <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList todos={this.state.todos}/>
       </div>
