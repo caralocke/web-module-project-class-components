@@ -67,7 +67,7 @@ class App extends React.Component {
     console.log(this.state.todos)
     return (
       <div className='App'>
-        <div>
+        <div className='header'>
           <h2>Welcome to your Todo App!</h2>
           <TodoForm addTodo={this.addTodo} />
         </div>
